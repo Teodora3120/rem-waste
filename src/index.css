@@ -1,0 +1,47 @@
+/* Global Styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-container {
+  flex: 1;
+}
+
+/* Center the main page */
+.main-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+:root {
+  --primary-color: #1e293b;
+  --accent-color: #38bdf8;
+}
+
+body {
+  background-color: #f6f8fc;
+  color: #1e293b;
+  font-family: "Inter", sans-serif;
+}
+
+/* Center the header */
+.container {
+  text-align: center;
+  width: 100%;
+}
