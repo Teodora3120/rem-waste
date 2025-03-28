@@ -22,6 +22,7 @@ const MainPage = () => {
             setSkips(response)
         } catch (err: any) {
             console.error(err)
+            setError(err?.message)
         } finally {
             setLoading(false);
         }
