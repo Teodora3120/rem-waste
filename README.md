@@ -41,9 +41,8 @@ This project is a frontend redesign for the skip selection page from [REM Waste]
 
 ## Running the Project
 
-    ```bash
-        npm install
-    ```
+     npm install
+
 
 ## Approach
 
