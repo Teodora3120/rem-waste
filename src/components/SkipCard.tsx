@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import { Card, CardContent, Typography, Button, Chip, Box } from "@mui/material";
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -8,7 +9,7 @@ interface SkipCardProps {
     selectedSkip: Skip | null;
 }
 
-export const SkipCard = ({ skip, selectedSkip }: SkipCardProps) => {
+const SkipCard = ({ skip, selectedSkip }: SkipCardProps) => {
     const [totalPrice, setTotalPrice] = useState<number>(
         skip.price_before_vat + (skip.price_before_vat * skip.vat) / 100
     );
@@ -57,7 +58,7 @@ export const SkipCard = ({ skip, selectedSkip }: SkipCardProps) => {
                 <Button
                     fullWidth
                     sx={{ mt: 1, mb: -1, cursor: !skip.allows_heavy_waste ? "not-allowed" : "pointer" }}
-                    className="!bg-indigo-900 hover:indigo-800 !text-white"
+                    className={`!text-white ${skip.id === selectedSkip?.id ? '!bg-indigo-600' : '!bg-indigo-900 '}`}
                     endIcon={<ArrowForwardIcon />}
                     disabled={!skip.allows_heavy_waste}>
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from 'react';
 import { Stepper, Step, StepLabel, Box, Typography, Container, useMediaQuery, useTheme } from '@mui/material';
 import PostcodeIcon from '@mui/icons-material/LocationOn';
@@ -35,13 +36,12 @@ const Header = () => {
         <PaymentIcon />
     ];
 
-    // Filter steps for mobile: Show only current & next step
     const visibleSteps = isMobile ? steps.slice(activeStep, activeStep + 2) : steps;
     const visibleIcons = isMobile ? stepIcons.slice(activeStep, activeStep + 2) : stepIcons;
 
     return (
         <Container>
-            <Box className="w-full" sx={{ py: 4 }}>
+            <Box className="w-full" sx={{ pt: 4 }}>
                 <Stepper activeStep={activeStep} alternativeLabel sx={{ overflowX: "auto" }}>
                     {steps.map((label, index) => (
                         <Step key={index}>
@@ -55,7 +55,7 @@ const Header = () => {
                                     },
                                 }}
                             >
-                                <Typography variant="body1" className={`text-${activeStep >= index ? 'white' : 'zinc-400'}`}>{label}</Typography>
+                                <Typography variant="body1" className={`text-nowrap text-${activeStep >= index ? 'white' : 'zinc-400'}`}>{label}</Typography>
                             </StepLabel>
                         </Step>
                     ))}

@@ -1,8 +1,9 @@
 import { Container, Alert, CircularProgress, Box } from "@mui/material";
 import Grid from '@mui/material/Grid2';
-import SkipCard from "./SkipCard";
 import { Skip } from "../types/SkipType";
 import { Dispatch, SetStateAction } from "react";
+import SkipCard from "./SkipCard";
+
 interface ContentProps {
     skips: Skip[];
     loading: boolean;
@@ -13,7 +14,7 @@ interface ContentProps {
 
 const Content = ({ skips, loading, error, setSelectedSkip, selectedSkip }: ContentProps) => {
     return (
-        <Container >
+        <Container sx={{ pb: 8 }}>
             {error && (
                 <Alert severity="error" sx={{ mb: 3 }}>
                     {error}
