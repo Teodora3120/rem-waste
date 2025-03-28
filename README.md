@@ -1,5 +1,7 @@
 # REM Waste - React Code Challenge
 
+## Sandbox [URL](https://codesandbox.io/p/github/Teodora3120/rem-waste/main?import=true)
+
 ## Overview
 
 This project is a frontend redesign for the skip selection page from [REM Waste](https://wewantwaste.co.uk/). The goal was to improve the user interface while preserving the original functionality. The challenge includes making the page responsive, user-friendly, and clean in terms of code structure and design.
@@ -53,3 +55,4 @@ When I first viewed the page I had to redesign, I quickly realized that achievin
 During the setup, I encountered some challenges with **Tailwind** version 4. After multiple searches and troubleshooting, I concluded that **Tailwind** version 3 was a more stable and better option. This allowed me to keep the codebase clean, responsive, and easier to maintain.
 
 Throughout the process, I focused on keeping the design functional, intuitive, and responsive across both mobile and desktop environments, using a mix of Tailwind's utility classes for styling and Material UI components for pre-built, accessible, and customizable UI elements.
+
