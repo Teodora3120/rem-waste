@@ -35,7 +35,6 @@ const Header = () => {
         <PaymentIcon />
     ];
 
-    // Filter steps for mobile: Show only current & next step
     const visibleSteps = isMobile ? steps.slice(activeStep, activeStep + 2) : steps;
     const visibleIcons = isMobile ? stepIcons.slice(activeStep, activeStep + 2) : stepIcons;
 
