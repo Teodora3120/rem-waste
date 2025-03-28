@@ -29,17 +29,15 @@ const MainPage = () => {
 
     return (
         <>
-            <div className="container">
-                <div className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-                    <Header />
+            <div className="flex flex-col min-h-screen">
+                <Header />
+                <div className="main-page-container flex-grow">
+                    <Content skips={skips} loading={loading} error={error} setSelectedSkip={setSelectedSkip} selectedSkip={selectedSkip} />
                 </div>
-                <Content skips={skips} loading={loading} error={error} setSelectedSkip={setSelectedSkip} />
             </div>
-            {selectedSkip && (
-                <div>
-                    <Footer selectedSkip={selectedSkip} />
-                </div>
-            )}
+            <div className={`${!selectedSkip ? 'display-hidden' : ''}`}>
+                <Footer selectedSkip={selectedSkip} />
+            </div>
         </>
     );
 };

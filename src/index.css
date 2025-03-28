@@ -13,35 +13,23 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: rgb(2,0,36);
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(14,12,66,1) 74%, rgba(40,96,107,1) 100%);
 }
 
-.app-container {
-  flex: 1;
+.footer-color {
+  background: rgb(2,0,36);
 }
 
-/* Center the main page */
 .main-page-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  width: 60%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin: 0 auto;
+  flex-grow: 1;
+  padding-top: 80px; 
 }
 
 
-:root {
-  --primary-color: #1e293b;
-  --accent-color: #38bdf8;
-}
-
-body {
-  background-color: #f6f8fc;
-  color: #1e293b;
-  font-family: "Inter", sans-serif;
-}
-
-/* Center the header */
-.container {
-  text-align: center;
-  width: 100%;
-}

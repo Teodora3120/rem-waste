@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Stepper, Step, StepLabel, Button, Box } from '@mui/material';
+import { useState } from 'react';
+import { Stepper, Step, StepLabel, Box, Typography, Container, useMediaQuery, useTheme } from '@mui/material';
 import PostcodeIcon from '@mui/icons-material/LocationOn';
 import WasteTypeIcon from '@mui/icons-material/Category';
 import SelectSkipIcon from '@mui/icons-material/Build';
@@ -23,9 +23,8 @@ const Header = () => {
         }
     };
 
-    const handleSkip = () => {
-        setActiveStep(activeStep + 1);
-    };
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
     const stepIcons = [
         <PostcodeIcon />,
@@ -36,66 +35,72 @@ const Header = () => {
         <PaymentIcon />
     ];
 
+    // Filter steps for mobile: Show only current & next step
+    const visibleSteps = isMobile ? steps.slice(activeStep, activeStep + 2) : steps;
+    const visibleIcons = isMobile ? stepIcons.slice(activeStep, activeStep + 2) : stepIcons;
+
     return (
-        <Box sx={{ width: '100%' }}>
-            <Stepper activeStep={activeStep} alternativeLabel>
-                {steps.map((label, index) => (
-                    <Step key={index}>
-                        <StepLabel
-                            icon={stepIcons[index]}
-                            sx={{
-                                color: activeStep >= index ? 'primary.main' : 'text.secondary',
-                                cursor: activeStep >= index ? 'pointer' : 'not-allowed',
-                                '&:hover': {
+        <Container>
+            <Box className="w-full" sx={{ py: 4 }}>
+                <Stepper activeStep={activeStep} alternativeLabel sx={{ overflowX: "auto" }}>
+                    {steps.map((label, index) => (
+                        <Step key={index}>
+                            <StepLabel
+                                icon={stepIcons[index]}
+                                sx={{
+                                    color: activeStep >= index ? 'primary.light' : 'primary.dark',
                                     cursor: activeStep >= index ? 'pointer' : 'not-allowed',
-                                },
-                            }}
-                        >
-                            {label}
-                        </StepLabel>
-                    </Step>
-                ))}
-            </Stepper>
+                                    '&:hover': {
+                                        cursor: activeStep >= index ? 'pointer' : 'not-allowed',
+                                    },
+                                }}
+                            >
+                                <Typography variant="body1" className={`text-${activeStep >= index ? 'white' : 'zinc-400'}`}>{label}</Typography>
+                            </StepLabel>
+                        </Step>
+                    ))}
+                </Stepper>
 
-            <Box sx={{ p: 2 }}>
-                {activeStep === 0 && (
-                    <div>
-                        <h2>Postcode Step</h2>
-                    </div>
-                )}
+                <Box sx={{ pt: 4 }} display="flex" justifyContent="center" alignItems="center">
+                    {activeStep === 0 && (
+                        <div >
+                            <Typography variant="h5" className="font-semibold text-zinc-400">Postcode Step</Typography>
+                        </div>
+                    )}
 
-                {activeStep === 1 && (
-                    <div>
-                        <h2>Waste Type Step</h2>
-                    </div>
-                )}
+                    {activeStep === 1 && (
+                        <div>
+                            <Typography variant="h5" className="font-semibold text-zinc-400">Waste Type Step</Typography>
+                        </div>
+                    )}
 
-                {activeStep === 2 && (
-                    <div>
-                        <h2>Choose Your Skip Size</h2>
-                        <p>Select the skip size that best suits your needs</p>
-                    </div>
-                )}
+                    {activeStep === 2 && (
+                        <div className='text-center'>
+                            <Typography variant="h5" className="font-semibold text-zinc-200">Choose Your Skip Size</Typography>
+                            <Typography sx={{ pt: 2 }} variant="body2" className="text-gray-600 text-zinc-400">Select the skip size that best suits your needs</Typography>
+                        </div>
+                    )}
 
-                {activeStep === 3 && (
-                    <div>
-                        <h2>Permit Check Step</h2>
-                    </div>
-                )}
+                    {activeStep === 3 && (
+                        <div>
+                            <Typography variant="h5" className="font-semibold text-zinc-400">Permit Check Step</Typography>
+                        </div>
+                    )}
 
-                {activeStep === 4 && (
-                    <div>
-                        <h2>Choose Date Step</h2>
-                    </div>
-                )}
+                    {activeStep === 4 && (
+                        <div>
+                            <Typography variant="h5" className="font-semibold text-zinc-400">Choose Date Step</Typography>
+                        </div>
+                    )}
 
-                {activeStep === 5 && (
-                    <div>
-                        <h2>Payment Step</h2>
-                    </div>
-                )}
-            </Box>
-        </Box>
+                    {activeStep === 5 && (
+                        <div>
+                            <Typography variant="h5" className="font-semibold text-zinc-400">Payment Step</Typography>
+                        </div>
+                    )}
+                </Box>
+            </Box >
+        </Container>
     );
 };
 

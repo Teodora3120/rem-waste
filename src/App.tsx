@@ -5,13 +5,9 @@ function App() {
   return (
     <div id="root">
       <Router>
-        <div className="app-container">
-          <div className="main-page-container">
-            <Routes>
-              <Route path="/" element={<MainPage />} />
-            </Routes>
-          </div>
-        </div>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+        </Routes>
       </Router>
     </div>
   );
