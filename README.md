@@ -1,4 +1,4 @@
-# REM Waste - Frontend Redesign Challenge
+# REM Waste - React Code Challenge
 
 ## Overview
 
