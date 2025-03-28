@@ -8,7 +8,7 @@ interface SkipCardProps {
     selectedSkip: Skip | null;
 }
 
-export const SkipCard = ({ skip, selectedSkip }: SkipCardProps) => {
+const SkipCard = ({ skip, selectedSkip }: SkipCardProps) => {
     const [totalPrice, setTotalPrice] = useState<number>(
         skip.price_before_vat + (skip.price_before_vat * skip.vat) / 100
     );

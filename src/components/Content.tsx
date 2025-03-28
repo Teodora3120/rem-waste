@@ -1,8 +1,9 @@
 import { Container, Alert, CircularProgress, Box } from "@mui/material";
 import Grid from '@mui/material/Grid2';
-import SkipCard from "./SkipCard";
 import { Skip } from "../types/SkipType";
 import { Dispatch, SetStateAction } from "react";
+import SkipCard from "./SkipCard";
+
 interface ContentProps {
     skips: Skip[];
     loading: boolean;
