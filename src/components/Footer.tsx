@@ -19,7 +19,7 @@ const Footer = ({ selectedSkip }: FooterProps) => {
                         <Typography variant="h6" className="text-gray-300">
                             {selectedSkip.size} Yard Skip
                         </Typography>
-                        <Typography variant="subtitle1" className="text-gray-400" sx={{ pb: 0 }}>
+                        <Typography variant="subtitle1" className="text-gray-400" sx={{ pt: 1 }}>
                             £{totalPrice.toFixed(2)} - {selectedSkip.hire_period_days} day hire
                         </Typography>
                     </Grid>
