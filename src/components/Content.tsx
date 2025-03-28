@@ -13,7 +13,7 @@ interface ContentProps {
 
 const Content = ({ skips, loading, error, setSelectedSkip, selectedSkip }: ContentProps) => {
     return (
-        <Container >
+        <Container sx={{ pb: 8 }}>
             {error && (
                 <Alert severity="error" sx={{ mb: 3 }}>
                     {error}
